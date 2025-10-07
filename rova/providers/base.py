@@ -1,0 +1,8 @@
+from typing import Iterable, Protocol
+
+class Provider(Protocol):
+    name: str
+    def complete(self, messages: list[dict]) -> str: ...
+    def stream(self, messages: list[dict]) -> Iterable[str]: ...
+
+
